@@ -1,45 +1,12 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { Download } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Home() {
-  const [isDownloading, setIsDownloading] = useState(false);
-  const { toast } = useToast();
+  const [, setLocation] = useLocation();
 
-  const handleDownload = async () => {
-    try {
-      setIsDownloading(true);
-      
-      const response = await fetch('/api/download/addon');
-      
-      if (!response.ok) {
-        throw new Error('Download failed');
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Actions Stuff 1.4.mcpack';
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-
-      toast({
-        title: "Download Started",
-        description: "Free Actions Stuff 1.4 add-on is downloading...",
-      });
-    } catch (error) {
-      toast({
-        title: "Download Failed",
-        description: "Failed to download the add-on. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsDownloading(false);
-    }
+  const handleDownload = () => {
+    setLocation('/download');
   };
 
   return (
@@ -85,20 +52,10 @@ export default function Home() {
           <div className="flex justify-center">
             <Button
               onClick={handleDownload}
-              disabled={isDownloading}
               className="minecraft-button text-white font-bold text-xl md:text-2xl px-12 py-6 tracking-wider border-0"
             >
-              {isDownloading ? (
-                <>
-                  <Download className="mr-2 h-6 w-6 animate-bounce" />
-                  DOWNLOADING...
-                </>
-              ) : (
-                <>
-                  <Download className="mr-2 h-6 w-6" />
-                  DOWNLOAD NOW
-                </>
-              )}
+              <Download className="mr-2 h-6 w-6" />
+              DOWNLOAD NOW
             </Button>
           </div>
           

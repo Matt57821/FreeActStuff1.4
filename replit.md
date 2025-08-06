@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a web application designed to distribute the "Free Actions Stuff 1.4" Minecraft Bedrock Edition add-on. The site provides a simple, user-friendly interface for downloading the .mcpack file directly to users' devices. The application uses a full-stack architecture with React frontend and Express backend, featuring a Minecraft-themed design with earth tones and pixelated aesthetics.
+This is a web application designed to distribute the "Free Actions Stuff 1.4" Minecraft Bedrock Edition add-on. The site provides a simple, user-friendly interface for downloading the .mcpack file directly to users' devices. The application features an ultra-minimal design with just a header, title, and download button, plus a confirmation page for downloads. The application uses a full-stack architecture with React frontend and Express backend, featuring a Minecraft-themed design with earth tones and pixelated aesthetics.
 
 ## User Preferences
 
@@ -14,7 +14,9 @@ Preferred communication style: Simple, everyday language.
 - **Framework**: React 18 with TypeScript using Vite as the build tool
 - **UI Library**: Shadcn/ui components built on Radix UI primitives for accessible, customizable components
 - **Styling**: Tailwind CSS with custom Minecraft-themed color palette and design system
-- **Routing**: Wouter for lightweight client-side routing
+- **Routing**: Wouter for lightweight client-side routing with two main routes:
+  - `/` - Home page with header, title, and download button
+  - `/download` - Download confirmation page with installation instructions
 - **State Management**: TanStack Query (React Query) for server state management
 - **Form Handling**: React Hook Form with Zod validation
 
