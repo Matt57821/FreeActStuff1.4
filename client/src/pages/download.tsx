@@ -129,7 +129,7 @@ export default function DownloadPage() {
             <div className="text-sm text-gray-700 space-y-2 text-left">
               <p>1. Download the .mcpack file</p>
               <p>2. Open Minecraft Bedrock Edition</p>
-              <p>3. Double-click the downloaded file or import it through Settings → Resource Packs</p>
+              <p>3. Click the file and it will go to Minecraft then upload automatically</p>
               <p>4. Activate the add-on in your world settings</p>
               <p>5. Enjoy your new actions!</p>
             </div>
