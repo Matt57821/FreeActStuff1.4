@@ -14,8 +14,9 @@ Preferred communication style: Simple, everyday language.
 - **Framework**: React 18 with TypeScript using Vite as the build tool
 - **UI Library**: Shadcn/ui components built on Radix UI primitives for accessible, customizable components
 - **Styling**: Tailwind CSS with custom Minecraft-themed color palette and design system
-- **Routing**: Wouter for lightweight client-side routing with two main routes:
-  - `/` - Home page with header, title, and download button
+- **Routing**: Wouter for lightweight client-side routing with subdomain-style structure:
+  - `/` - Redirects to `/home` subdomain
+  - `/home` - Main page with header, title, and download button
   - `/download` - Download confirmation page with installation instructions
 - **State Management**: TanStack Query (React Query) for server state management
 - **Form Handling**: React Hook Form with Zod validation

@@ -65,7 +65,7 @@ export default function DownloadPage() {
           {/* Back Button */}
           <div className="mb-8 flex justify-center">
             <Button
-              onClick={() => setLocation('/')}
+              onClick={() => setLocation('/home')}
               variant="outline"
               className="text-gray-700 border-gray-300 hover:bg-gray-50"
             >
