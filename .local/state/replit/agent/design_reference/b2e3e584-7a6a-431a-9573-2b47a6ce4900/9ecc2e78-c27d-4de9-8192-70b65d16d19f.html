@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeActStuff1.4 - Free Actions Stuff 1.4 Add-on</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'minecraft-green': '#4CAF50',
+                    'minecraft-light-green': '#8BC34A',
+                    'minecraft-brown': '#795548',
+                    'minecraft-dark': '#2E2E2E',
+                    'minecraft-bg': '#1A1A1A'
+                },
+                fontFamily: {
+                    'mono': ['Roboto Mono', 'monospace']
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .pixelated-border {
+            border: 4px solid;
+            border-image: linear-gradient(45deg, 
+                #4CAF50 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                #4CAF50 50%, 
+                #4CAF50 75%, 
+                transparent 75%
+            ) 4;
+        }
+        
+        .minecraft-shadow {
+            box-shadow: 8px 8px 0px rgba(76, 175, 80, 0.3);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 10px 10px 0px rgba(76, 175, 80, 0.4);
+        }
+        
+        .grass-pattern {
+            background-image: 
+                linear-gradient(45deg, #4CAF50 25%, transparent 25%), 
+                linear-gradient(-45deg, #4CAF50 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #8BC34A 75%), 
+                linear-gradient(-45deg, transparent 75%, #8BC34A 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+    </style>
+</head>
+
+<body class="font-mono bg-minecraft-bg text-white min-h-screen">
+    <!-- @COMPONENT: Header -->
+    <header class="bg-minecraft-dark border-b-4 border-minecraft-green sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-minecraft-green minecraft-shadow flex items-center justify-center text-minecraft-dark font-bold text-xl">
+                        F
+                    </div>
+                    <h1 class="text-2xl font-bold text-minecraft-green">FreeActStuff1.4</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-300 hover:text-minecraft-green transition-colors duration-200">Home</a>
+                    <a href="#download" class="text-gray-300 hover:text-minecraft-green transition-colors duration-200">Download</a>
+                    <a href="#about" class="text-gray-300 hover:text-minecraft-green transition-colors duration-200">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="relative py-20 md:py-32 overflow-hidden">
+        <div class="grass-pattern absolute inset-0 opacity-5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-block mb-6">
+                    <div class="bg-minecraft-green text-minecraft-bg px-6 py-2 minecraft-shadow transform -rotate-1">
+                        <span class="font-bold text-lg">NEW ADD-ON</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <span class="text-minecraft-green">Free Actions</span>
+                    <br>
+                    <span class="text-minecraft-light-green">Stuff 1.4</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto">
+                    Enhanced Minecraft Bedrock experience with new action commands, custom behaviors, and improved gameplay mechanics.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="bg-minecraft-green hover:bg-minecraft-light-green text-minecraft-bg font-bold py-4 px-8 minecraft-shadow hover-lift transition-all duration-200 text-xl w-full sm:w-auto">
+                        <!-- @FUNCTIONALITY: Download button should trigger add-on file download -->
+                        <span class="flex items-center justify-center space-x-3">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Download Now</span>
+                        </span>
+                    </button>
+                    
+                    <div class="text-gray-400 text-sm">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Compatible with Bedrock Edition</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Description Section -->
+    <section class="py-20 bg-minecraft-dark/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-minecraft-green">What's This Add-on?</h2>
+                    <div class="w-20 h-1 bg-minecraft-light-green mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-minecraft-light-green">Enhanced Gameplay Experience</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            Free Actions Stuff 1.4 revolutionizes your Minecraft Bedrock experience by introducing powerful new action commands and enhanced gameplay mechanics that work seamlessly with the vanilla game.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                            This add-on extends the core functionality of Minecraft Bedrock, providing players with new ways to interact with their world through custom behaviors and optimized performance enhancements.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-minecraft-green minecraft-shadow flex-shrink-0"></div>
+                                <span class="text-gray-300">Advanced action command system</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-minecraft-green minecraft-shadow flex-shrink-0"></div>
+                                <span class="text-gray-300">Custom behavior implementations</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-minecraft-green minecraft-shadow flex-shrink-0"></div>
+                                <span class="text-gray-300">Optimized for Bedrock Edition</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-minecraft-green minecraft-shadow flex-shrink-0"></div>
+                                <span class="text-gray-300">Regular updates and improvements</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-minecraft-dark border-4 border-minecraft-green p-6 minecraft-shadow">
+                            <h4 class="text-xl font-bold mb-4 text-minecraft-green">Installation Requirements</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-minecraft-green">•</span>
+                                    <span>Minecraft Bedrock Edition</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-minecraft-green">•</span>
+                                    <span>Version 1.19.0 or higher</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-minecraft-green">•</span>
+                                    <span>Experimental gameplay enabled</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-minecraft-brown/20 border-4 border-minecraft-brown p-6 minecraft-shadow">
+                            <h4 class="text-xl font-bold mb-4 text-minecraft-brown">Version 1.4 Features</h4>
+                            <p class="text-gray-300 leading-relaxed">
+                                This latest version includes performance optimizations, bug fixes from previous releases, and introduces new command structures for enhanced player interaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Description Section -->
+
+    <!-- @COMPONENT: Download Section -->
+    <section id="download" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-minecraft-green">Ready to Download?</h2>
+                <p class="text-xl text-gray-300 mb-12">
+                    Get Free Actions Stuff 1.4 and start enhancing your Minecraft Bedrock experience today.
+                </p>
+                
+                <div class="bg-minecraft-dark border-4 border-minecraft-green p-8 minecraft-shadow mb-8">
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-minecraft-green minecraft-shadow flex items-center justify-center">
+                            <svg class="w-8 h-8 text-minecraft-bg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-minecraft-light-green">Free Actions Stuff 1.4</h3>
+                            <p class="text-gray-400">Latest version • .mcaddon file</p>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-minecraft-green hover:bg-minecraft-light-green text-minecraft-bg font-bold py-6 px-12 minecraft-shadow hover-lift transition-all duration-200 text-xl w-full mb-4">
+                        <!-- @FUNCTIONALITY: Main download button for the add-on -->
+                        Download Free Actions Stuff 1.4
+                    </button>
+                    
+                    <p class="text-gray-400 text-sm">
+                        Click to download • Compatible with all devices running Minecraft Bedrock
+                    </p>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    <p class="mb-2">Having trouble? Make sure experimental gameplay is enabled in your world settings.</p>
+                    <p>Need help installing? Check the Minecraft official documentation for add-on installation guides.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Download Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-minecraft-dark border-t-4 border-minecraft-green py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-8 h-8 bg-minecraft-green minecraft-shadow flex items-center justify-center text-minecraft-bg font-bold">
+                        F
+                    </div>
+                    <span class="text-xl font-bold text-minecraft-green">FreeActStuff1.4</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4">
+                    Enhancing Minecraft Bedrock with free, quality add-ons for the community.
+                </p>
+                
+                <div class="flex justify-center space-x-6 text-sm text-gray-400">
+                    <span>© 2024 FreeActStuff1.4</span>
+                    <span>•</span>
+                    <span>Made for Minecraft Bedrock</span>
+                    <span>•</span>
+                    <span>Community Driven</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+    // Simple smooth scrolling for navigation links
+    (function() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add click handlers for download buttons
+        const downloadButtons = document.querySelectorAll('button');
+        downloadButtons.forEach(button => {
+            if (button.textContent.includes('Download')) {
+                button.addEventListener('click', function() {
+                    // TODO: Implement actual file download functionality
+                    console.log('Download initiated for Free Actions Stuff 1.4');
+                    
+                    // Visual feedback
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<span class="flex items-center justify-center space-x-3"><svg class="w-6 h-6 animate-spin" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path></svg><span>Downloading...</span></span>';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                });
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

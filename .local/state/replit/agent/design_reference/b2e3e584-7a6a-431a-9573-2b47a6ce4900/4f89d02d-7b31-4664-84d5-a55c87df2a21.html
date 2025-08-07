@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeActStuff1.4 - Free Actions Stuff 1.4 Add-on</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'mono': ['Roboto Mono', 'monospace']
+                },
+                colors: {
+                    'minecraft-green': '#4CAF50',
+                    'minecraft-brown': '#8D6E63',
+                    'minecraft-dark-green': '#2E7D32',
+                    'minecraft-bg': '#F5F5DC'
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .pixelated-border {
+            box-shadow: 
+                inset -2px -2px 0px 0px rgba(0,0,0,0.2),
+                inset 2px 2px 0px 0px rgba(255,255,255,0.3);
+        }
+        
+        .minecraft-button {
+            position: relative;
+            background: linear-gradient(145deg, #4CAF50, #2E7D32);
+            border: 3px solid #2E7D32;
+            box-shadow: 
+                0 4px 0 #1B5E20,
+                0 8px 12px rgba(0,0,0,0.3);
+            transition: all 0.1s ease;
+        }
+        
+        .minecraft-button:hover {
+            transform: translateY(2px);
+            box-shadow: 
+                0 2px 0 #1B5E20,
+                0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .minecraft-button:active {
+            transform: translateY(4px);
+            box-shadow: 
+                0 0px 0 #1B5E20,
+                0 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-minecraft-bg font-mono">
+    <!-- @COMPONENT: Header -->
+    <header class="bg-minecraft-brown pixelated-border">
+        <div class="container mx-auto px-4 py-6">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-white tracking-wider">
+                    FreeActStuff1.4
+                </h1>
+                <div class="mt-2 w-24 h-1 bg-minecraft-green mx-auto"></div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <main class="min-h-screen flex items-center justify-center px-4 py-16">
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Add-on Showcase Block -->
+            <div class="bg-minecraft-green pixelated-border p-8 md:p-12 mb-12 mx-auto max-w-2xl">
+                <div class="bg-minecraft-brown pixelated-border p-6 mb-6">
+                    <!-- Minecraft grass block inspired icon placeholder -->
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-b from-minecraft-green to-minecraft-dark-green pixelated-border relative">
+                        <div class="absolute top-0 left-0 w-full h-4 bg-minecraft-green"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-20 bg-minecraft-brown"></div>
+                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20">
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                            <div class="border border-black"></div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl md:text-4xl font-bold text-white mb-4 tracking-wider">
+                        Free Actions Stuff 1.4
+                    </h2>
+                    
+                    <div class="text-minecraft-bg font-medium text-lg">
+                        <span data-mock="true">Minecraft Bedrock Add-on</span>
+                    </div>
+                </div>
+                
+                <div class="text-white text-sm md:text-base font-medium mb-8">
+                    <span data-mock="true">Compatible with Minecraft Bedrock Edition</span>
+                </div>
+            </div>
+
+            <!-- Download Button -->
+            <div class="flex justify-center">
+                <button 
+                    class="minecraft-button text-white font-bold text-xl md:text-2xl px-12 py-6 tracking-wider"
+                    data-event="click:handleDownload" 
+                    data-implementation="Should trigger download of the Minecraft add-on file"
+                    data-mock="true"
+                >
+                    DOWNLOAD NOW
+                </button>
+            </div>
+            
+            <!-- Download Info -->
+            <div class="mt-8 text-gray-600 text-sm font-medium">
+                <p data-mock="true">Click to download Free Actions Stuff 1.4 add-on</p>
+                <p data-mock="true" class="mt-1">File size: ~2.5 MB | .mcaddon format</p>
+            </div>
+        </div>
+    </main>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <script>
+        (function() {
+            // TODO: Implement actual download functionality
+            // This would typically handle the file download process
+            
+            const downloadButton = document.querySelector('[data-event="click:handleDownload"]');
+            
+            if (downloadButton) {
+                downloadButton.addEventListener('click', function() {
+                    // TODO: Replace with actual download logic
+                    console.log('Download button clicked - implement actual download here');
+                    
+                    // Placeholder behavior for demo
+                    this.textContent = 'DOWNLOADING...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.textContent = 'DOWNLOAD NOW';
+                        this.disabled = false;
+                    }, 2000);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bedrock Add-ons Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'minecraft-green': '#4CAF50',
+                        'minecraft-brown': '#8B4513',
+                        'minecraft-gold': '#FFA726',
+                        'minecraft-dark': '#2E2E2E',
+                        'minecraft-light': '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'minecraft': ['Roboto', 'Arial', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'block': '0 4px 0 0 rgba(0,0,0,0.2)',
+                        'block-hover': '0 6px 0 0 rgba(0,0,0,0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-minecraft-light font-minecraft">
+    <!-- @COMPONENT: Header -->
+    <header class="bg-minecraft-green shadow-block sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-minecraft-brown shadow-block flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-white">Bedrock Add-ons Hub</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-white hover:text-minecraft-gold transition-colors">Home</a>
+                    <a href="#categories" class="text-white hover:text-minecraft-gold transition-colors">Categories</a>
+                    <a href="#popular" class="text-white hover:text-minecraft-gold transition-colors">Popular</a>
+                    <a href="#guides" class="text-white hover:text-minecraft-gold transition-colors">Guides</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: SearchSection -->
+    <section class="bg-white py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-6 text-minecraft-dark">Find Your Perfect Add-on</h2>
+                <div class="relative">
+                    <input type="text" placeholder="Search mods, texture packs, maps..." 
+                           class="w-full px-6 py-4 border-4 border-minecraft-brown rounded-none shadow-block focus:shadow-block-hover focus:outline-none text-lg">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-minecraft-gold px-6 py-2 shadow-block hover:shadow-block-hover transition-all">
+                        <i class="fas fa-search text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: SearchSection -->
+
+    <!-- @COMPONENT: CategoriesSection -->
+    <section id="categories" class="py-12 bg-minecraft-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-minecraft-dark">Browse Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Category Cards -->
+                <div class="bg-white p-6 shadow-block hover:shadow-block-hover transition-all cursor-pointer border-4 border-minecraft-green">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-minecraft-green mx-auto mb-4 shadow-block flex items-center justify-center">
+                            <i class="fas fa-cogs text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark">Mods</h3>
+                        <p class="text-gray-600 mb-4">Enhance your gameplay with new features and mechanics</p>
+                        <span class="text-minecraft-gold font-semibold">847 Add-ons</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 shadow-block hover:shadow-block-hover transition-all cursor-pointer border-4 border-minecraft-brown">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-minecraft-brown mx-auto mb-4 shadow-block flex items-center justify-center">
+                            <i class="fas fa-palette text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark">Texture Packs</h3>
+                        <p class="text-gray-600 mb-4">Transform the look and feel of your world</p>
+                        <span class="text-minecraft-gold font-semibold">1,234 Add-ons</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 shadow-block hover:shadow-block-hover transition-all cursor-pointer border-4 border-minecraft-gold">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-minecraft-gold mx-auto mb-4 shadow-block flex items-center justify-center">
+                            <i class="fas fa-map text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark">Maps</h3>
+                        <p class="text-gray-600 mb-4">Explore new worlds and adventures</p>
+                        <span class="text-minecraft-gold font-semibold">692 Add-ons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CategoriesSection -->
+
+    <!-- @COMPONENT: FeaturedSection -->
+    <section id="popular" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-minecraft-dark">Featured & Popular</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- @MAP: featuredAddons.map(addon => ( -->
+                <!-- Featured Add-on 1 -->
+                <div class="bg-minecraft-light border-4 border-minecraft-green shadow-block hover:shadow-block-hover transition-all">
+                    <!-- Dragon texture pack landscape with purple dragon flying over mountains -->
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" 
+                         alt="Dragon Pack Screenshot" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-minecraft-brown text-white px-3 py-1 text-sm font-semibold shadow-block">TEXTURE PACK</span>
+                            <div class="flex items-center text-minecraft-gold">
+                                <i class="fas fa-star"></i>
+                                <span class="ml-1 font-semibold" data-bind="addon.rating">4.8</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark" data-bind="addon.name">Dragon Realm Pack</h3>
+                        <p class="text-gray-600 mb-4" data-bind="addon.description">Transform your world into a mystical dragon realm with new textures, sounds, and magical effects.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-500" data-bind="addon.downloads">12,450 downloads</span>
+                            <span class="text-sm text-gray-500" data-bind="addon.version">v2.1</span>
+                        </div>
+                        <button class="w-full bg-minecraft-green text-white py-3 shadow-block hover:shadow-block-hover transition-all font-semibold" data-event="click:downloadAddon" data-implementation="Should trigger download of .mcpack file">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Featured Add-on 2 -->
+                <div class="bg-minecraft-light border-4 border-minecraft-gold shadow-block hover:shadow-block-hover transition-all">
+                    <!-- Underground cave system with glowing crystals and mining equipment -->
+                    <img src="https://pixabay.com/get/g16b837cbc3477801e1446f29b68457a7c17b647114aadfe3f520f668c98391496c3c0a8a3d8eaab3f72ed062615ba0e644832e11055ef7a1fc51e350b7d0d6a0_1280.jpg" 
+                         alt="Cave Explorer Mod Screenshot" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-minecraft-green text-white px-3 py-1 text-sm font-semibold shadow-block">MOD</span>
+                            <div class="flex items-center text-minecraft-gold">
+                                <i class="fas fa-star"></i>
+                                <span class="ml-1 font-semibold" data-bind="addon.rating">4.9</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark" data-bind="addon.name">Cave Explorer Plus</h3>
+                        <p class="text-gray-600 mb-4" data-bind="addon.description">Enhanced mining experience with new ores, cave systems, and underground structures to discover.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-500" data-bind="addon.downloads">8,923 downloads</span>
+                            <span class="text-sm text-gray-500" data-bind="addon.version">v1.5</span>
+                        </div>
+                        <button class="w-full bg-minecraft-green text-white py-3 shadow-block hover:shadow-block-hover transition-all font-semibold" data-event="click:downloadAddon" data-implementation="Should trigger download of .mcaddon file">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Featured Add-on 3 -->
+                <div class="bg-minecraft-light border-4 border-minecraft-brown shadow-block hover:shadow-block-hover transition-all">
+                    <!-- Fantasy castle on a floating island with waterfalls -->
+                    <img src="https://pixabay.com/get/g44338de6713e6034342469f63decadbd23a951c6ff7ca935e34d7e2df73c11f3f622926ad76f3eda435ec5e4af635554c9e7e7fb28e0aa16f2ca7785e63cdb70_1280.jpg" 
+                         alt="Sky Castle Map Screenshot" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-minecraft-gold text-white px-3 py-1 text-sm font-semibold shadow-block">MAP</span>
+                            <div class="flex items-center text-minecraft-gold">
+                                <i class="fas fa-star"></i>
+                                <span class="ml-1 font-semibold" data-bind="addon.rating">4.7</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-minecraft-dark" data-bind="addon.name">Sky Castle Adventure</h3>
+                        <p class="text-gray-600 mb-4" data-bind="addon.description">Epic adventure map featuring floating islands, challenging puzzles, and hidden treasures.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-500" data-bind="addon.downloads">15,672 downloads</span>
+                            <span class="text-sm text-gray-500" data-bind="addon.version">v3.0</span>
+                        </div>
+                        <button class="w-full bg-minecraft-green text-white py-3 shadow-block hover:shadow-block-hover transition-all font-semibold" data-event="click:downloadAddon" data-implementation="Should trigger download of .mcworld file">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FeaturedSection -->
+
+    <!-- @COMPONENT: InstallationGuides -->
+    <section id="guides" class="py-12 bg-minecraft-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-minecraft-dark">Installation Guides</h2>
+            <div class="max-w-3xl mx-auto">
+                
+                <!-- @STATE: activeAccordion:string = '' -->
+                
+                <!-- Mod Installation Guide -->
+                <div class="mb-4 bg-white border-4 border-minecraft-green shadow-block">
+                    <button class="w-full p-6 text-left font-semibold text-minecraft-dark hover:bg-minecraft-light transition-colors" data-event="click:toggleAccordion" data-implementation="Toggle accordion visibility">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg">How to Install Mods (.mcaddon files)</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content p-6 pt-0 text-gray-700">
+                        <!-- @FUNCTIONALITY: This accordion should expand/collapse when clicked -->
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Download the .mcaddon file from the add-on page</li>
+                            <li>Open Minecraft Bedrock Edition on your device</li>
+                            <li>Double-click the downloaded .mcaddon file</li>
+                            <li>Minecraft will open automatically and import the add-on</li>
+                            <li>Create a new world or edit an existing world</li>
+                            <li>Go to Behavior Packs and activate the mod</li>
+                            <li>Start playing with your new mod!</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Texture Pack Installation Guide -->
+                <div class="mb-4 bg-white border-4 border-minecraft-brown shadow-block">
+                    <button class="w-full p-6 text-left font-semibold text-minecraft-dark hover:bg-minecraft-light transition-colors" data-event="click:toggleAccordion" data-implementation="Toggle accordion visibility">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg">How to Install Texture Packs (.mcpack files)</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content p-6 pt-0 text-gray-700 hidden">
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Download the .mcpack file</li>
+                            <li>Double-click to open with Minecraft</li>
+                            <li>The texture pack will be imported automatically</li>
+                            <li>Go to Settings > Global Resources</li>
+                            <li>Find your texture pack and activate it</li>
+                            <li>Apply changes and enjoy your new textures!</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Map Installation Guide -->
+                <div class="mb-4 bg-white border-4 border-minecraft-gold shadow-block">
+                    <button class="w-full p-6 text-left font-semibold text-minecraft-dark hover:bg-minecraft-light transition-colors" data-event="click:toggleAccordion" data-implementation="Toggle accordion visibility">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg">How to Install Maps (.mcworld files)</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content p-6 pt-0 text-gray-700 hidden">
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Download the .mcworld file</li>
+                            <li>Double-click the file to open with Minecraft</li>
+                            <li>The world will be imported automatically</li>
+                            <li>You'll see the world in your worlds list</li>
+                            <li>Click on the world to start playing</li>
+                            <li>Explore and have fun!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: InstallationGuides -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-minecraft-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-minecraft-gold">About Us</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Your trusted source for high-quality Minecraft Bedrock add-ons. We curate the best mods, texture packs, and maps from the community.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-minecraft-gold">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Browse All Add-ons</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Top Rated</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">New Releases</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Submit Add-on</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-minecraft-gold">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Installation Help</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Troubleshooting</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">Report Issues</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Community -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-minecraft-gold">Community</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-minecraft-gold transition-colors">
+                            <i class="fab fa-reddit text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-300 text-sm">Join our community of Minecraft builders and creators!</p>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Bedrock Add-ons Hub. Not affiliated with Mojang Studios or Microsoft.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+            
+            // Simple accordion functionality for installation guides
+            const accordionButtons = document.querySelectorAll('[data-event*="toggleAccordion"]');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle content visibility
+                    content.classList.toggle('hidden');
+                    
+                    // Rotate arrow icon
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Close other accordions
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== this) {
+                            const otherContent = otherButton.nextElementSibling;
+                            const otherIcon = otherButton.querySelector('i');
+                            otherContent.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+
+            // Mobile menu toggle (basic implementation)
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle functionality
+                    console.log('Mobile menu toggled');
+                });
+            }
+
+            // Search functionality placeholder
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchButton = document.querySelector('.fas.fa-search').parentElement;
+            
+            if (searchButton) {
+                searchButton.addEventListener('click', function() {
+                    // TODO: Implement search functionality
+                    const searchTerm = searchInput.value;
+                    console.log('Search for:', searchTerm);
+                });
+            }
+
+            // Download button handlers
+            const downloadButtons = document.querySelectorAll('[data-event*="downloadAddon"]');
+            
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // TODO: Implement actual file download functionality
+                    const addonName = this.closest('.bg-minecraft-light, .bg-white').querySelector('h3').textContent;
+                    console.log('Downloading:', addonName);
+                    
+                    // Visual feedback
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Downloading...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check mr-2"></i>Downloaded!';
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.disabled = false;
+                        }, 2000);
+                    }, 1500);
+                });
+            });
+
+            // Category card click handlers
+            const categoryCards = document.querySelectorAll('#categories .cursor-pointer');
+            
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // TODO: Implement category filtering
+                    const categoryName = this.querySelector('h3').textContent;
+                    console.log('Browse category:', categoryName);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
